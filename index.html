@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<a href="" id="mapa">Eu acho que sei onde você esta!</a>
+
+<script>
+    navigator.geolocation.getCurrentPosition(funciona, erro);//poderia usar o watchPosition()
+    function funciona(pos){
+        var la= pos.coords.latitude;
+        var lo = pos.coords.longitude;
+        urlLink= `https://www.openstreetmap.org/#map=19/${la}/${lo}`
+        document.getElementById('mapa'). href = urlLink;
+    }
+    function erro(){
+        console.log('Não foi possivel localizar')
+    }
+</script>
+</html>

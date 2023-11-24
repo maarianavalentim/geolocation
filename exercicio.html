@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet Routing</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url(maxwell-the-spinning-cat-4k-live-wallpaper.mp4);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        #map {
+            margin: 0 auto;
+            border: 3px solid black;
+            border-radius: 11px;
+            width: 80%;
+            height: 40vh;
+            position: absolute;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <div>
+        <video width="1000" height="2000" src="SnapInsta.io-Los pingüinos me la van a mascar - Edit Dika Vika-(1080p).mp4" poster="EbiSNtkXgAIMdng.jpg"  autoplay loop>
+         </video>
+    </div>
+
+
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+    <script>
+        var map = L.map('map').setView([-23.5421, -46.3833], 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        var control = L.Routing.control({
+            waypoints: [
+                L.latLng(-23.56123087526393, -46.357655078351605),
+                L.latLng(-23.54267439877731, -46.3572570888135)
+            ]
+        }).addTo(map);
+    </script>
+</body>
+</html>
